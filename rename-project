@@ -2,6 +2,14 @@
 
 PROJECT_NAME=$1
 
+
+if [ -z "$PROJECT_NAME" ]
+then
+        echo "usage: rename-project 'project-name'"
+	exit 0
+fi
+
+
 find `pwd` -name "*projectx*" -print|awk '{f=$0;sub("projectx","'$PROJECT_NAME'");print "mv -f "f" "$0}'|sh
 
 find `pwd` -name "*projectx*" -print|awk '{f=$0;sub("projectx","'$PROJECT_NAME'");print "mv -f "f" "$0}'|sh
