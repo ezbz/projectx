@@ -3,13 +3,13 @@
     <groupId>org.projectx</groupId>
     <name>org.projectx.selenium</name>
     <artifactId>org.projectx.selenium</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <description>Web Application Project</description>
 
     <parent>
         <artifactId>org.projectx.parent</artifactId>
         <groupId>org.projectx</groupId>
-        <version>0.0.2-SNAPSHOT</version>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <dependencies>
