@@ -1,0 +1,18 @@
+Basic maven projet with spring
+
+1. Checkout the code using git clone
+2. Import Existing Maven Project in Eclipse
+3. Build the projects using mvn install eclipse:eclipse from the command line
+4. Add tomcat server and right click webapp project -> Run On Server
+
+If you get a 
+
+java.lang.ClassNotFoundException: org.springframework.web.context.ContextLoaderListener 
+
+when stating tomcat add the following entry to the .classpath
+
+<classpathentry kind="con" path="org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER">
+    <attributes>
+        <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+    </attributes>
+</classpathentry>
