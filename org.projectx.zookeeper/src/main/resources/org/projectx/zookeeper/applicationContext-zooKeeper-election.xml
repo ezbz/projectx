@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util-3.0.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+    <description>
+        Leader election context expects:
+        - a bean called leaderElectionTarget which implements the LeaderElectionTarget interface
+            this will be used to start/stop the service based on election
+    </description>
+    <bean id="leaderElectionProxyTemplate" class="org.springframework.aop.framework.ProxyFactoryBean"
+        abstract="true">
+        <property name="interceptorNames">
+            <list>
+                <value>leaderElectionTarget</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="electionStateFactory" class="org.projectx.zookeeper.election.ElectionStateFactory">
+        <constructor-arg ref="zookeeperTemplate" />
+        <constructor-arg
+            value="${org.projectx.zookeeper.services.root}/${org.projectx.environment}" />
+        <constructor-arg value="$zk{zookeeper.entity.name}" />
+    </bean>
+
+    <bean id="leaderElector" class="org.projectx.zookeeper.election.LeaderElectorImpl"
+        init-method="initialize">
+        <constructor-arg ref="zookeeperTemplate" />
+        <constructor-arg ref="leaderElectionTarget" />
+        <constructor-arg ref="electionStateFactory" />
+        <constructor-arg value="${org.projectx.zookeeper.election.disabled}" />
+    </bean>
+
+    <!-- This bean initializes the leader election by invoking electNewLeader -->
+    <bean
+        class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+        <property name="targetObject" ref="leaderElector" />
+        <property name="targetMethod" value="electNewLeader" />
+    </bean>
+
+</beans>

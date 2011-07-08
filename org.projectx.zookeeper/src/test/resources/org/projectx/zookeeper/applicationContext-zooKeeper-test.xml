@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <import
+        resource="classpath:org/projectx/zookeeper/applicationContext-zooKeeper-presence.xml" />
+    <import
+        resource="classpath:org/projectx/zookeeper/applicationContext-zooKeeper-election.xml" />
+
+    <bean id="zkClient" class="org.projectx.zookeeper.ZkClientFactoryBean">
+        <property name="zkConnection">
+            <bean class="org.projectx.zookeeper.TestInMemoryConnection" />
+        </property>
+        <property name="stateListeners">
+            <list>
+                <ref local="zkStatsCollector" />
+            </list>
+        </property>
+    </bean>
+
+    <bean id="zkStatsCollector" class="org.projectx.zookeeper.ZooKeeperClientStatsCollector" />
+
+    <bean id="zookeeperTemplate" class="org.projectx.zookeeper.ZooKeeperTemplate">
+        <constructor-arg ref="zkClient" />
+    </bean>
+
+    <bean
+        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="ignoreUnresolvablePlaceholders" value="false" />
+        <property name="location"
+            value="classpath:org/projectx/zookeeper/ZooKeeper.properties" />
+    </bean>
+
+    <bean id="leaderElectionTarget"
+        class="org.projectx.zookeeper.election.LoggingLeaderElectionTarget" />
+        
+        
+    <!--    
+    <bean id="zkServer" class="org.projectx.zookeeper.ZkServerFactoryBean">
+        <property name="dataDirectory" value="/tmp/zooKeeperTest/" />
+        <property name="logDirectory" value="/tmp/zooKeeperTest/" />
+        <property name="port" value="21899" />
+    </bean> 
+    <bean id="zkClient" factory-bean="zkServer" factory-method="getZkClient" />    
+    -->
+</beans>

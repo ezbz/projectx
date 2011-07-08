@@ -1,0 +1,10 @@
+#!/bin/sh
+
+PROJECT_NAME=$1
+
+find `pwd` -name "*projectx*" -print|awk '{f=$0;sub("projectx","'$PROJECT_NAME'");print "mv -f "f" "$0}'|sh
+
+find `pwd` -name "*projectx*" -print|awk '{f=$0;sub("projectx","'$PROJECT_NAME'");print "mv -f "f" "$0}'|sh
+
+egrep -lRZ "projectx" . | xargs -0 -l sed -i -e 's/projectx/'$PROJECT_NAME'/g'
+

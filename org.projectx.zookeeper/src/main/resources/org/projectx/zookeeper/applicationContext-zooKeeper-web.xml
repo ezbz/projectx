@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="entityNameResolver"
+        class="org.projectx.zookeeper.ServletContextEntityNameResolver" />
+
+    <bean
+        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <description>
+            Exposes the $zk{zookeeper.entity.name} property to the context
+            Note that the zookeeper PropertyPlaceholderConfigurer must resort
+            to different naming scheme for properties, otherwise other configurers
+            in the classpath conflict in the resolution process
+        </description>
+        <property name="placeholderPrefix" value="$zk{" />
+        <property name="placeholderSuffix" value="}" />
+        <property name="properties">
+            <map>
+                <entry key="zookeeper.entity.name">
+                    <bean factory-bean="entityNameResolver"
+                        factory-method="resolve" />
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+
+</beans>

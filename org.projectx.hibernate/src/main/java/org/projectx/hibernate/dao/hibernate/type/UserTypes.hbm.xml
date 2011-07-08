@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+   <!-- Joda-Time User Types -->
+   <typedef name="localTimeUserType"
+      class="org.joda.time.contrib.hibernate.PersistentLocalTimeAsTime" />
+   <typedef name="dateTimeUserType"
+      class="org.joda.time.contrib.hibernate.PersistentDateTime" />
+   <typedef name="localDateUserType"
+      class="org.joda.time.contrib.hibernate.PersistentLocalDate" />
+   <typedef name="localDateTimeUserType"
+      class="org.joda.time.contrib.hibernate.PersistentLocalDateTime" />
+   <typedef name="yearMonthDayUserType"
+      class="org.joda.time.contrib.hibernate.PersistentYearMonthDay" />
+   <typedef name="timeOfDayUserType"
+      class="org.joda.time.contrib.hibernate.PersistentTimeOfDay" />
+   <typedef name="ruleKeyUserType"
+      class="org.projectx.hibernate.dao.hibernate.type.PersistentRuleKey" />
+   <typedef name="uriUserType"
+      class="org.projectx.hibernate.dao.hibernate.type.PersistentUri"/>
+
+</hibernate-mapping>

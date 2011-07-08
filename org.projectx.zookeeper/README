@@ -1,0 +1,17 @@
+ZOOKEEPER SERVICE LAYER 
+=======================
+
+Provides servlet/spring based abstraction for leader election and presence in Zookeeper
+
+- assumes spring/servlet presence
+- import applicationContext-zookeeper-all.xml or custom selection of sub-contexts per feature
+- zookeeper paths are determined by the servlet display name in web.xml
+- provides some basic MBeans for leader election and zookeeper client
+
+
+
+Basic maven projet with spring
+
+1. Checkout the code using git clone
+2. Import Existing Maven Project in Eclipse
+3. Build the projects using mvn install eclipse:eclipse from the command line
