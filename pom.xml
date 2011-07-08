@@ -3,7 +3,7 @@
     <groupId>org.projectx</groupId>
     <name>org.projectx.parent</name>
     <artifactId>org.projectx.parent</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
     <description>projectx Parent Project</description>
     <packaging>pom</packaging>
 
@@ -53,13 +53,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <warProject.packaging>war</warProject.packaging>
 
-        <org.projectx.core.version>0.0.1</org.projectx.core.version>
-        <org.projectx.webapp.version>0.0.1</org.projectx.webapp.version>
-        <org.projectx.selenium.version>0.0.1</org.projectx.selenium.version>
-        <org.projectx.hibernate.version>0.0.1</org.projectx.hibernate.version>
-        <org.projectx.zookeeper.version>0.0.1</org.projectx.zookeeper.version>
-        <org.projectx.zookeeper.web.version>0.0.1</org.projectx.zookeeper.web.version>
-        <org.projectx.elasticsearch.version>0.0.1</org.projectx.elasticsearch.version>
+        <org.projectx.core.version>0.0.2-SNAPSHOT</org.projectx.core.version>
+        <org.projectx.webapp.version>0.0.2-SNAPSHOT</org.projectx.webapp.version>
+        <org.projectx.selenium.version>0.0.2-SNAPSHOT</org.projectx.selenium.version>
+        <org.projectx.hibernate.version>0.0.2-SNAPSHOT</org.projectx.hibernate.version>
+        <org.projectx.zookeeper.version>0.0.2-SNAPSHOT</org.projectx.zookeeper.version>
+        <org.projectx.zookeeper.web.version>0.0.2-SNAPSHOT</org.projectx.zookeeper.web.version>
+        <org.projectx.elasticsearch.version>0.0.2-SNAPSHOT</org.projectx.elasticsearch.version>
 
         <org.springframework.version>3.0.5.RELEASE</org.springframework.version>
         <org.springframework.security.version>3.0.4.RELEASE</org.springframework.security.version>

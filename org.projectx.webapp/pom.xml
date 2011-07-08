@@ -3,13 +3,13 @@
     <groupId>org.projectx</groupId>
     <name>org.projectx.webapp</name>
     <artifactId>org.projectx.webapp</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
     <description>Web Application Project</description>
 
     <parent>
         <groupId>org.projectx</groupId>
         <artifactId>org.projectx.parent</artifactId>
-        <version>0.0.1</version>
+        <version>0.0.2-SNAPSHOT</version>
     </parent>
 
     <packaging>${warProject.packaging}</packaging>
