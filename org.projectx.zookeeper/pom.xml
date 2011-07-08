@@ -3,13 +3,13 @@
     <groupId>org.projectx</groupId>
     <name>org.projectx.zookeeper</name>
     <artifactId>org.projectx.zookeeper</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <description>Zookeeper Project</description>
 
     <parent>
         <groupId>org.projectx</groupId>
         <artifactId>org.projectx.parent</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.1</version>
     </parent>
 
     <dependencies>

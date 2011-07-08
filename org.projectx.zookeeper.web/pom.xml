@@ -1,14 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.projectx</groupId>
-    <name>org.projectx.webapp</name>
-    <artifactId>org.projectx.webapp</artifactId>
+    <artifactId>org.projectx.zookeeper.web</artifactId>
     <version>0.0.1</version>
-    <description>Web Application Project</description>
+    <name>org.projectx.zookeeper.web</name>
+    <description>Zookeeper Web Application</description>
 
     <parent>
-        <groupId>org.projectx</groupId>
         <artifactId>org.projectx.parent</artifactId>
+        <groupId>org.projectx</groupId>
         <version>0.0.1</version>
     </parent>
 
@@ -31,6 +31,10 @@
         <dependency>
             <groupId>${project.parent.groupId}</groupId>
             <artifactId>org.projectx.core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>${project.parent.groupId}</groupId>
+            <artifactId>org.projectx.zookeeper</artifactId>
         </dependency>
 
         <dependency>
@@ -76,6 +80,12 @@
         </dependency>
 
         <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+        </dependency>
+
+
+        <dependency>
             <groupId>${project.parent.groupId}</groupId>
             <artifactId>org.projectx.core</artifactId>
             <scope>test</scope>
@@ -85,5 +95,20 @@
 
     </dependencies>
 
-
+    <!-- 
+    <distributionManagement>
+        <repository>
+            <id>ossrh-staging</id>
+            <url>http://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+        </repository>
+        <snapshotRepository>
+            <id>ossrh-snapshots</id>
+            <url>http://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <site>
+            <id>org.projectx</id>
+            <url>url</url>
+        </site>
+    </distributionManagement>
+     -->
 </project>
