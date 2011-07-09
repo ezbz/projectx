@@ -4,9 +4,9 @@ import org.springframework.util.Assert;
 
 public class ZookeeperClientMonitor implements ZookeeperClientMonitorMBean {
 
-  private final ZooKeeperClientStatsCollector statsCollector;
+  private final ZookeeperClientStatsCollector statsCollector;
 
-  public ZookeeperClientMonitor(final ZooKeeperClientStatsCollector statsCollector) {
+  public ZookeeperClientMonitor(final ZookeeperClientStatsCollector statsCollector) {
     Assert.notNull(statsCollector, "statsCollector cannot be null");
     this.statsCollector = statsCollector;
   }

@@ -22,9 +22,9 @@
         </property>
     </bean>
     
-    <bean id="zkStatsCollector" class="org.projectx.zookeeper.ZooKeeperClientStatsCollector" />
+    <bean id="zkStatsCollector" class="org.projectx.zookeeper.ZookeeperClientStatsCollector" />
 
-    <bean id="zookeeperTemplate" class="org.projectx.zookeeper.ZooKeeperTemplate">
+    <bean id="zookeeperTemplate" class="org.projectx.zookeeper.ZookeeperTemplate">
         <constructor-arg ref="zkClient" />
     </bean>
 

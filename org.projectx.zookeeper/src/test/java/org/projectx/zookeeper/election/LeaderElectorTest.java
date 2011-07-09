@@ -19,7 +19,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import org.projectx.zookeeper.SequentialZNode;
 import org.projectx.zookeeper.EphemeralZNodeImpl;
-import org.projectx.zookeeper.ZooKeeperOperations;
+import org.projectx.zookeeper.ZookeeperOperations;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LeaderElectorTest {
@@ -31,7 +31,7 @@ public class LeaderElectorTest {
   private LeaderElectorImpl classUnderTest;
 
   @Mock
-  private ZooKeeperOperations zkDao;
+  private ZookeeperOperations zkDao;
 
   @Mock
   private LeaderElectionTarget target;

@@ -1,7 +1,7 @@
 package org.projectx.zookeeper;
 
 /**
- * A representation of a ZooKeeper ZNode
+ * A representation of a Zookeeper ZNode
  * 
  * @author Erez Mazor (erezmazor@gmail.com)
  * 

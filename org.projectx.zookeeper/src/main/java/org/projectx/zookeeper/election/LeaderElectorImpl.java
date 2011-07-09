@@ -15,10 +15,10 @@ import org.springframework.util.StringUtils;
 
 import org.projectx.zookeeper.LeaderElectionNodeListener;
 import org.projectx.zookeeper.SequentialZNode;
-import org.projectx.zookeeper.ZooKeeperOperations;
+import org.projectx.zookeeper.ZookeeperOperations;
 
 /**
- * An implementation of the {@link LeaderElector} interface based on a ZooKeeper
+ * An implementation of the {@link LeaderElector} interface based on a Zookeeper
  * DAO. Maintains the state of affairs by holding an atomic reference of the
  * current {@link ElectionState}. Notifies the execution target of changes in
  * the state of leadership via the provided {@link LeaderElectionTarget}
@@ -30,7 +30,7 @@ public class LeaderElectorImpl implements LeaderElector, LeaderElectionNodeListe
 
   private static final Logger log = LoggerFactory.getLogger(LeaderElectorImpl.class);
 
-  private final ZooKeeperOperations zkDao;
+  private final ZookeeperOperations zkDao;
   private final LeaderElectionTarget leaderElectionTarget;
   private LeaderElectionStrategy electionStrategy = new AntiHerdingElectionStrategy();
 
@@ -46,7 +46,7 @@ public class LeaderElectorImpl implements LeaderElector, LeaderElectionNodeListe
 
   private final boolean disabled;
 
-  public LeaderElectorImpl(final ZooKeeperOperations zkDao,
+  public LeaderElectorImpl(final ZookeeperOperations zkDao,
       final LeaderElectionTarget leaderElectionTarget,
       final ElectionStateFactory electionStateFactory, final boolean disabled) {
     Assert.notNull(zkDao, "zkDao cannot be null");
@@ -130,7 +130,7 @@ public class LeaderElectorImpl implements LeaderElector, LeaderElectionNodeListe
   private NavigableSet<SequentialZNode> getChildren() {
     final String rootPath = getNode().getPath();
     final NavigableSet<SequentialZNode> nodes = zkDao.findChildren(rootPath);
-    log.info("Election ZooKeeper nodes: {}", StringUtils.collectionToCommaDelimitedString(nodes));
+    log.info("Election Zookeeper nodes: {}", StringUtils.collectionToCommaDelimitedString(nodes));
     return nodes;
   }
 
@@ -188,7 +188,7 @@ public class LeaderElectorImpl implements LeaderElector, LeaderElectionNodeListe
 
   /**
    * An {@link IZkStateListener} implementation used to notify the leader
-   * election framework about disconnects and reconnects from the ZooKeeper
+   * election framework about disconnects and reconnects from the Zookeeper
    * ensemble. The ZkClient handles reconnects on its own. However, when a
    * session has expired or disconnected the
    * {@link LeaderElectorListenerCallback} must be notified in order for work to

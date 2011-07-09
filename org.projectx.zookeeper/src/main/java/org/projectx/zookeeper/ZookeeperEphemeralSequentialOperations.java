@@ -3,15 +3,15 @@ package org.projectx.zookeeper;
 import java.util.NavigableSet;
 
 /**
- * A data-access object for working with ZooKeeper nodes. ZooKeeper nodes are
+ * A data-access object for working with Zookeeper nodes. Zookeeper nodes are
  * structured in a hierarchical manner as described in the <a href=
  * "http://zookeeper.apache.org/doc/r3.3.3/zookeeperOver.html#sc_dataModelNameSpace"
- * >ZooKeeper manual</a>.
+ * >Zookeeper manual</a>.
  * 
  * @author Erez Mazor (erezmazor@gmail.com)
  * 
  */
-public interface ZooKeeperEphemeralSequentialOperations {
+public interface ZookeeperEphemeralSequentialOperations {
   /**
    * Find all the child ephemeral sequential {@link SequentialZNode nodes} for a
    * given path
@@ -27,7 +27,7 @@ public interface ZooKeeperEphemeralSequentialOperations {
    * 
    * @param path
    *          the root of the ephemeral sequential node collection (pass in the
-   *          root not the full node name, ZooKeeper will append the sequence,
+   *          root not the full node name, Zookeeper will append the sequence,
    *          e.g., if you pass in /election/n_ for the path the first time the
    *          create node will have a path of /election/n_0000000000)
    * @return the {@link SequentialZNode} representing the created node
@@ -39,7 +39,7 @@ public interface ZooKeeperEphemeralSequentialOperations {
    * 
    * @param path
    *          the root of the ephemeral sequential node collection (pass in the
-   *          root not the full node name, ZooKeeper will append the sequence,
+   *          root not the full node name, Zookeeper will append the sequence,
    *          e.g., if you pass in /election/n_ for the path the first time the
    *          create node will have a path of /election/n_0000000000)
    * @param data

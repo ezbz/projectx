@@ -7,7 +7,7 @@ import org.projectx.zookeeper.ZNodeUtils;
 
 /**
  * A {@link LeaderElectionStrategy} implementation which follows the strategy
- * outlined by the ZooKeeper <a href=
+ * outlined by the Zookeeper <a href=
  * "http://zookeeper.apache.org/doc/current/recipes.html#sc_leaderElection"
  * >recipes page</a> in order to prevent client "herding" when a node
  * disappears.

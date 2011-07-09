@@ -11,22 +11,22 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.util.Assert;
 
 /**
- * An implementation of the {@link ZooKeeperEphemeralSequentialOperations} interface
+ * An implementation of the {@link ZookeeperEphemeralSequentialOperations} interface
  * based on {@link ZkClient} instance.
  * <p>
  * <b>Note</b>: this implementation implicitly waits for nodes to be visible
- * within ZooKeeper before returning. The timeout for waiting on nodes can be
+ * within Zookeeper before returning. The timeout for waiting on nodes can be
  * configured globally via {@link #setNodeCreationTimeoutSeconds(int)}. If the
  * timeout is exceeded and the node is still not visible an exception is thrown.
  * 
  * @author Erez Mazor (erezmazor@gmail.com)
  */
-public class ZooKeeperTemplate implements ZooKeeperOperations {
+public class ZookeeperTemplate implements ZookeeperOperations {
   private final ZkClient zkClient;
   private int nodeCreationTimeoutSeconds = 5;
   private final ObjectFormatter formatter = new EncodedStringObjectFormatter();
 
-  public ZooKeeperTemplate(final ZkClient zkClient) {
+  public ZookeeperTemplate(final ZkClient zkClient) {
     Assert.notNull(zkClient, "zkClient cannot be null");
     this.zkClient = zkClient;
   }
@@ -50,7 +50,7 @@ public class ZooKeeperTemplate implements ZooKeeperOperations {
   private NavigableSet<SequentialZNode> createNodes(final List<String> children, final String path) {
     final NavigableSet<SequentialZNode> ZNodes = new TreeSet<SequentialZNode>();
     for (final String child : children) {
-      final String fullPath = path + ZooKeeperConstants.PATH_SEPARATOR + child;
+      final String fullPath = path + ZookeeperConstants.PATH_SEPARATOR + child;
       ZNodes.add(createNode(path, fullPath, zkClient.readData(fullPath)));
     }
     return ZNodes;
@@ -62,8 +62,8 @@ public class ZooKeeperTemplate implements ZooKeeperOperations {
 
   @Override
   public SequentialZNode createEphemeralSequential(final String path, final Object data) {
-    final String ephermalPath = path + ZooKeeperConstants.PATH_SEPARATOR
-        + ZooKeeperConstants.EPHERMAL_PREFIX;
+    final String ephermalPath = path + ZookeeperConstants.PATH_SEPARATOR
+        + ZookeeperConstants.EPHERMAL_PREFIX;
     final String nodeName = zkClient.createEphemeralSequential(ephermalPath, formatData(data));
     final boolean created = zkClient.waitUntilExists(nodeName, TimeUnit.SECONDS,
         nodeCreationTimeoutSeconds);
@@ -81,11 +81,11 @@ public class ZooKeeperTemplate implements ZooKeeperOperations {
 
   @Override
   public ZNode createPersistent(final String path) {
-    final String[] parts = StringUtils.split(path, ZooKeeperConstants.PATH_SEPARATOR);
+    final String[] parts = StringUtils.split(path, ZookeeperConstants.PATH_SEPARATOR);
     final StringBuilder sb = new StringBuilder();
 
     for (int i = 0; i < parts.length; i++) {
-      sb.append(ZooKeeperConstants.PATH_SEPARATOR).append(parts[i]);
+      sb.append(ZookeeperConstants.PATH_SEPARATOR).append(parts[i]);
       final String pathPart = sb.toString();
       if (!zkClient.exists(pathPart)) {
         zkClient.createPersistent(pathPart);

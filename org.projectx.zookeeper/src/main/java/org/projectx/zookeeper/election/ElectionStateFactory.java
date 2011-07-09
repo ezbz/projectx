@@ -5,8 +5,8 @@ import java.util.NavigableSet;
 import org.projectx.net.InetUtils;
 import org.projectx.zookeeper.SequentialZNode;
 import org.projectx.zookeeper.ZNodeUtils;
-import org.projectx.zookeeper.ZooKeeperConstants;
-import org.projectx.zookeeper.ZooKeeperOperations;
+import org.projectx.zookeeper.ZookeeperConstants;
+import org.projectx.zookeeper.ZookeeperOperations;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.Assert;
@@ -14,12 +14,12 @@ import org.springframework.util.Assert;
 public class ElectionStateFactory {
   private static final Logger log = LoggerFactory.getLogger(ElectionStateFactory.class);
 
-  private final ZooKeeperOperations zkDao;
+  private final ZookeeperOperations zkDao;
   private final String electionPath;
 
   private final String entityName;
 
-  public ElectionStateFactory(final ZooKeeperOperations zooKeeperDao, final String electionPath,
+  public ElectionStateFactory(final ZookeeperOperations zooKeeperDao, final String electionPath,
       final String entityName) {
     Assert.notNull(zooKeeperDao, "zooKeeperDao cannot be null");
     Assert.hasText(electionPath, "nodeRoot cannot be empty");
@@ -38,7 +38,7 @@ public class ElectionStateFactory {
 
     final String address = InetUtils.getLocalHostname();
     final SequentialZNode node = zkDao.createEphemeralSequential(servicePath, address);
-    log.info("Created ZooKeeper node {}", node);
+    log.info("Created Zookeeper node {}", node);
     final NavigableSet<SequentialZNode> children = zkDao.findChildren(servicePath);
     final SequentialZNode leader = ZNodeUtils.findNextLeader(children, node);
     return ElectionState.valueOf(node, leader);
@@ -46,9 +46,9 @@ public class ElectionStateFactory {
   }
 
   private String constructServicePath() {
-    return new StringBuilder(electionPath).append(ZooKeeperConstants.PATH_SEPARATOR)
+    return new StringBuilder(electionPath).append(ZookeeperConstants.PATH_SEPARATOR)
                                           .append(entityName)
-                                          .append(ZooKeeperConstants.PATH_SEPARATOR)
+                                          .append(ZookeeperConstants.PATH_SEPARATOR)
                                           .append("election").toString();
   }
 }

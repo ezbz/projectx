@@ -19,20 +19,20 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
-public class ZooKeeperDaoTest {
+public class ZookeeperDaoTest {
   private static final String projectx_PATH = "/projectx";
   private static final String ROOT_PATH = projectx_PATH + "/election";
   private static final String EPHEMERAL_PATH = ROOT_PATH + "/n_";
   private static final String EPHEMERAL_NODE = EPHEMERAL_PATH + "0000000000";
-  private ZooKeeperOperations classUnderTest;
+  private ZookeeperOperations classUnderTest;
 
   @Mock
   private ZkClient zkClient;
 
   @Before
   public void before() {
-    classUnderTest = new ZooKeeperTemplate(zkClient);
-    ((ZooKeeperTemplate) classUnderTest).setNodeCreationTimeoutSeconds(5);
+    classUnderTest = new ZookeeperTemplate(zkClient);
+    ((ZookeeperTemplate) classUnderTest).setNodeCreationTimeoutSeconds(5);
   }
 
   @Test

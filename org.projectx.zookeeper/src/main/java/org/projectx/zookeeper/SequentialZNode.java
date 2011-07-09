@@ -1,7 +1,7 @@
 package org.projectx.zookeeper;
 
 /**
- * Represents a Sequential (possibly ephemeral) ZNode in ZooKeeper
+ * Represents a Sequential (possibly ephemeral) ZNode in Zookeeper
  * 
  * @author Erez Mazor (erezmazor@gmail.com)
  * 

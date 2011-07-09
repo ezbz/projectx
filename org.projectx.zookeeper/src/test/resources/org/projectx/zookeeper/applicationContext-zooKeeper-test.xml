@@ -20,9 +20,9 @@
         </property>
     </bean>
 
-    <bean id="zkStatsCollector" class="org.projectx.zookeeper.ZooKeeperClientStatsCollector" />
+    <bean id="zkStatsCollector" class="org.projectx.zookeeper.ZookeeperClientStatsCollector" />
 
-    <bean id="zookeeperTemplate" class="org.projectx.zookeeper.ZooKeeperTemplate">
+    <bean id="zookeeperTemplate" class="org.projectx.zookeeper.ZookeeperTemplate">
         <constructor-arg ref="zkClient" />
     </bean>
 
@@ -30,7 +30,7 @@
         class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="ignoreUnresolvablePlaceholders" value="false" />
         <property name="location"
-            value="classpath:org/projectx/zookeeper/ZooKeeper.properties" />
+            value="classpath:org/projectx/zookeeper/Zookeeper.properties" />
     </bean>
 
     <bean id="leaderElectionTarget"

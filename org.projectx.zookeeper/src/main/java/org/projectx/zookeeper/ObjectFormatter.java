@@ -1,7 +1,7 @@
 package org.projectx.zookeeper;
 
 /**
- * An object formatter for data stored in ZooKeeper
+ * An object formatter for data stored in Zookeeper
  * 
  * @author Erez Mazor (erezmazor@gmail.com)
  * 

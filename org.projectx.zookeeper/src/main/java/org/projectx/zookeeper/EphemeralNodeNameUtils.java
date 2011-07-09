@@ -4,7 +4,7 @@ import org.apache.commons.lang.StringUtils;
 
 /**
  * Utility class for manipulating ephemeral node names, paths and sequences
- * managed by ZooKeeper
+ * managed by Zookeeper
  * 
  * @author Erez Mazor (erezmazor@gmail.com)
  * 
@@ -14,9 +14,9 @@ public class EphemeralNodeNameUtils {
   /**
    * Parses the sequence values from an ephemeral/sequential node name. Assumes
    * a conventional sequence separator for the ephemeral node name as defined by
-   * {@link ZooKeeperConstants#SEQUENCE_SEAPARTOR}.
+   * {@link ZookeeperConstants#SEQUENCE_SEAPARTOR}.
    * <p>
-   * <b>Example</b>: the expected ZooKeeper node name is in the form of
+   * <b>Example</b>: the expected Zookeeper node name is in the form of
    * /aaa/bbb/ccc/n_0000000015, this method will return 15.
    * 
    * @param path
@@ -27,7 +27,7 @@ public class EphemeralNodeNameUtils {
     if (StringUtils.isEmpty(path)) {
       throw new IllegalArgumentException("path value cannot be empty");
     }
-    final int idx = path.lastIndexOf(ZooKeeperConstants.SEQUENCE_SEAPARTOR);
+    final int idx = path.lastIndexOf(ZookeeperConstants.SEQUENCE_SEAPARTOR);
     final String sequence = path.substring(idx + 1, path.length());
     return Integer.valueOf(sequence);
   }
@@ -47,11 +47,11 @@ public class EphemeralNodeNameUtils {
    */
   public static String constructNodeName(final String nodeRoot, final int sequenceNumber) {
     final String paddedSequence = StringUtils.leftPad(Integer.toString(sequenceNumber),
-        ZooKeeperConstants.SEQUENCE_PADDING_LENGTH, ZooKeeperConstants.SEQUENCE_PADDING_CHARACTER);
+        ZookeeperConstants.SEQUENCE_PADDING_LENGTH, ZookeeperConstants.SEQUENCE_PADDING_CHARACTER);
     final StringBuilder sb = new StringBuilder();
     sb.append(nodeRoot);
-    sb.append(ZooKeeperConstants.PATH_SEPARATOR);
-    sb.append(ZooKeeperConstants.EPHERMAL_PREFIX);
+    sb.append(ZookeeperConstants.PATH_SEPARATOR);
+    sb.append(ZookeeperConstants.EPHERMAL_PREFIX);
     sb.append(paddedSequence);
     return sb.toString();
   }

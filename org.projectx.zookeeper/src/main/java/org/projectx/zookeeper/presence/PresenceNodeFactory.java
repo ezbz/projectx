@@ -2,20 +2,20 @@ package org.projectx.zookeeper.presence;
 
 import org.projectx.net.InetUtils;
 import org.projectx.zookeeper.ZNode;
-import org.projectx.zookeeper.ZooKeeperConstants;
-import org.projectx.zookeeper.ZooKeeperOperations;
+import org.projectx.zookeeper.ZookeeperConstants;
+import org.projectx.zookeeper.ZookeeperOperations;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.Assert;
 
 public class PresenceNodeFactory {
   private static final Logger log = LoggerFactory.getLogger(PresenceNodeFactory.class);
-  private final ZooKeeperOperations zkDao;
+  private final ZookeeperOperations zkDao;
   private final String presencePath;
   private final String entityName;
   private final MetaDataProvider metaDataProvider;
 
-  public PresenceNodeFactory(final ZooKeeperOperations zkDao, final String presencePath,
+  public PresenceNodeFactory(final ZookeeperOperations zkDao, final String presencePath,
       final String entityName, final MetaDataProvider metaDataProvider) {
     Assert.notNull(zkDao, "zkDao cannot be null");
     Assert.hasText(presencePath, "presencePathRoot cannot be empty");
@@ -29,8 +29,8 @@ public class PresenceNodeFactory {
 
   public ZNode createPresenceNode() {
 
-    final String servicePath = presencePath + ZooKeeperConstants.PATH_SEPARATOR + entityName
-        + ZooKeeperConstants.PATH_SEPARATOR + "presence";
+    final String servicePath = presencePath + ZookeeperConstants.PATH_SEPARATOR + entityName
+        + ZookeeperConstants.PATH_SEPARATOR + "presence";
     if (!zkDao.nodeExists(servicePath)) {
       zkDao.createPersistent(servicePath);
     } else {

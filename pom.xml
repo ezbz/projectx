@@ -18,7 +18,7 @@
         <module>org.projectx.selenium</module>
         <module>org.projectx.webapp</module>
         <module>org.projectx.zookeeper</module>
-        <module>org.projectx.zookeeper.web</module>
+        <!--<module>org.projectx.zookeeper.web</module>-->
     </modules>
 
     <!-- 
@@ -58,7 +58,7 @@
         <org.projectx.selenium.version>0.0.2-SNAPSHOT</org.projectx.selenium.version>
         <org.projectx.hibernate.version>0.0.2-SNAPSHOT</org.projectx.hibernate.version>
         <org.projectx.zookeeper.version>0.0.2-SNAPSHOT</org.projectx.zookeeper.version>
-        <org.projectx.zookeeper.web.version>0.0.2-SNAPSHOT</org.projectx.zookeeper.web.version>
+        <!--<org.projectx.zookeeper.web.version>0.0.2-SNAPSHOT</org.projectx.zookeeper.web.version>-->
         <org.projectx.elasticsearch.version>0.0.2-SNAPSHOT</org.projectx.elasticsearch.version>
 
         <org.springframework.version>3.0.5.RELEASE</org.springframework.version>
@@ -143,11 +143,13 @@
                 <artifactId>org.projectx.zookeeper</artifactId>
                 <version>${org.projectx.zookeeper.version}</version>
             </dependency>
+	    <!--
             <dependency>
                 <groupId>org.projectx</groupId>
                 <artifactId>org.projectx.zookeeper.web</artifactId>
                 <version>${org.projectx.zookeeper.web.version}</version>
             </dependency>
+	    -->
             <dependency>
                 <groupId>org.projectx</groupId>
                 <artifactId>org.projectx.selenium</artifactId>

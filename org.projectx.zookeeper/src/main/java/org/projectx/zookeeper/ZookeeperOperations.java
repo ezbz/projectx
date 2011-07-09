@@ -1,10 +1,10 @@
 package org.projectx.zookeeper;
 
-public interface ZooKeeperOperations extends ZooKeeperPersistentOperations, ZooKeeperEphemeralOperations,
-    ZooKeeperEphemeralSequentialOperations {
+public interface ZookeeperOperations extends ZookeeperPersistentOperations, ZookeeperEphemeralOperations,
+    ZookeeperEphemeralSequentialOperations {
 
   /**
-   * Check if a node exists within ZooKeeper
+   * Check if a node exists within Zookeeper
    * 
    * @param path
    *          the path to the requested node
@@ -13,7 +13,7 @@ public interface ZooKeeperOperations extends ZooKeeperPersistentOperations, ZooK
   boolean nodeExists(String path);
 
   /**
-   * Register a listener for data/state changes within ZooKeeper
+   * Register a listener for data/state changes within Zookeeper
    * 
    * @param path
    *          the path to listen for

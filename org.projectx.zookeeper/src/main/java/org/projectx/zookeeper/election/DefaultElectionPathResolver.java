@@ -2,7 +2,7 @@ package org.projectx.zookeeper.election;
 
 import org.projectx.zookeeper.EntityNameResolver;
 import org.projectx.zookeeper.NodePathResolver;
-import org.projectx.zookeeper.ZooKeeperConstants;
+import org.projectx.zookeeper.ZookeeperConstants;
 import org.springframework.util.Assert;
 
 /**
@@ -31,9 +31,9 @@ public class DefaultElectionPathResolver implements NodePathResolver {
 
   @Override
   public String resolve() {
-    return new StringBuilder(electionRootPath).append(ZooKeeperConstants.PATH_SEPARATOR)
+    return new StringBuilder(electionRootPath).append(ZookeeperConstants.PATH_SEPARATOR)
                                               .append(entityNameResolver.resolve())
-                                              .append(ZooKeeperConstants.PATH_SEPARATOR)
+                                              .append(ZookeeperConstants.PATH_SEPARATOR)
                                               .append("election").toString();
   }
 }

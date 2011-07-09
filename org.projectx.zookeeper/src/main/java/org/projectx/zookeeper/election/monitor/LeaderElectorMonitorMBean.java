@@ -24,9 +24,9 @@ public interface LeaderElectorMonitorMBean {
   String getLeader();
 
   /**
-   * Get the connection state to the ZooKeeper server
+   * Get the connection state to the Zookeeper server
    * 
-   * @return true if currently connected to ZooKeeper
+   * @return true if currently connected to Zookeeper
    */
   boolean isConnected();
 

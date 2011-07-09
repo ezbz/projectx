@@ -1,6 +1,6 @@
 package org.projectx.zookeeper;
 
-public interface ZooKeeperConstants {
+public interface ZookeeperConstants {
 
   public static final String PATH_SEPARATOR = "/";
   public static final String SEQUENCE_PADDING_CHARACTER = "0";

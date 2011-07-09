@@ -18,7 +18,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import org.projectx.zookeeper.SequentialZNode;
 import org.projectx.zookeeper.EphemeralZNodeImpl;
-import org.projectx.zookeeper.ZooKeeperOperations;
+import org.projectx.zookeeper.ZookeeperOperations;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ElectionStateFactoryTest {
@@ -28,7 +28,7 @@ public class ElectionStateFactoryTest {
   private final SequentialZNode LEADER = new EphemeralZNodeImpl(NODE_ROOT, 0);
   private ElectionStateFactory classUnderTest;
   @Mock
-  private ZooKeeperOperations zkDao;
+  private ZookeeperOperations zkDao;
 
   @Before
   public void before() {

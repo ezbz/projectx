@@ -14,7 +14,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 import org.projectx.zookeeper.SequentialZNode;
 import org.projectx.zookeeper.EphemeralZNodeImpl;
 import org.projectx.zookeeper.ZNode;
-import org.projectx.zookeeper.ZooKeeperOperations;
+import org.projectx.zookeeper.ZookeeperOperations;
 
 @RunWith(MockitoJUnitRunner.class)
 public class PresenceNodeFactoryTest {
@@ -23,7 +23,7 @@ public class PresenceNodeFactoryTest {
   private final SequentialZNode NODE = new EphemeralZNodeImpl(PATH + "testService", 1);
   private PresenceNodeFactory classUnderTest;
   @Mock
-  private ZooKeeperOperations zkDao;
+  private ZookeeperOperations zkDao;
 
   @Mock
   private MetaDataProvider metaDataProvider;

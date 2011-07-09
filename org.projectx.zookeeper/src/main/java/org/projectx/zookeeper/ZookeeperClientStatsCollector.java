@@ -7,8 +7,8 @@ import org.apache.zookeeper.Watcher.Event.KeeperState;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class ZooKeeperClientStatsCollector implements IZkStateListener {
-  private static final Logger log = LoggerFactory.getLogger(ZooKeeperClientStatsCollector.class);
+public class ZookeeperClientStatsCollector implements IZkStateListener {
+  private static final Logger log = LoggerFactory.getLogger(ZookeeperClientStatsCollector.class);
 
   private final AtomicLong disconnectedCount = new AtomicLong();
   private final AtomicLong syncConnectedCount = new AtomicLong();

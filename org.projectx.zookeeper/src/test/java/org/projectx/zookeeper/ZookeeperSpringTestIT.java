@@ -20,19 +20,19 @@ import org.projectx.zookeeper.presence.PresenceManager;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration
-public class ZooKeeperSpringTestIT {
+public class ZookeeperSpringTestIT {
   private static final String TEST_PATH = "/projectx/test/"
-      + ZooKeeperSpringTestIT.class.getSimpleName();
+      + ZookeeperSpringTestIT.class.getSimpleName();
 
   static {
-    System.setProperty("zookeeper.entity.name", ZooKeeperSpringTestIT.class.getSimpleName());
+    System.setProperty("zookeeper.entity.name", ZookeeperSpringTestIT.class.getSimpleName());
   }
 
   @Resource
   private ZkClient zkClient;
 
   @Resource
-  ZooKeeperOperations zkTemplate;
+  ZookeeperOperations zkTemplate;
 
   @Resource
   PresenceManager presenceManager;

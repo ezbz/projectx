@@ -6,10 +6,10 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 
 /**
- * Represents an ephemeral sequential node within ZooKeeper.
+ * Represents an ephemeral sequential node within Zookeeper.
  * <p>
  * <b>Note</b>: instance of this class should not be collected or hashed across
- * domains (paths). ZooKeeper guarantees that sequences of ephemeral nodes are
+ * domains (paths). Zookeeper guarantees that sequences of ephemeral nodes are
  * unique for a given path. For this reason {@link #equals(Object)}
  * {@link #hashCode()} and {@link #compareTo(EphemeralZNodeImpl)} all rely on
  * the sequence number solely and ignore the path.

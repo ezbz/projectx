@@ -1,8 +1,8 @@
 package org.projectx.zookeeper.election;
 
 /**
- * Interface for classes that wish to be managed by a ZooKeeper based leader
- * election scheme (e.g., in a leader election scenario ZooKeeper will use this
+ * Interface for classes that wish to be managed by a Zookeeper based leader
+ * election scheme (e.g., in a leader election scenario Zookeeper will use this
  * interface to indicate to the target weather it is the leader or not).
  * 
  * @author Erez Mazor (erezmazor@gmail.com)

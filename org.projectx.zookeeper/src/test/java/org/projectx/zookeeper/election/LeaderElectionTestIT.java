@@ -14,12 +14,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.projectx.zookeeper.SequentialZNode;
 import org.projectx.zookeeper.TestInMemoryConnection;
-import org.projectx.zookeeper.ZooKeeperOperations;
+import org.projectx.zookeeper.ZookeeperOperations;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
- * This test assumes ZooKeeper server has been started on localhost:2181 or a
+ * This test assumes Zookeeper server has been started on localhost:2181 or a
  * {@link TestInMemoryConnection} is supplied to the client
  * 
  * @author Erez Mazor (erezmazor@gmail.com)
@@ -36,7 +36,7 @@ public class LeaderElectionTestIT {
   LeaderElector elector;
 
   @Resource
-  ZooKeeperOperations zkTemplate;
+  ZookeeperOperations zkTemplate;
 
   @Resource
   ZkClient zkClient;
