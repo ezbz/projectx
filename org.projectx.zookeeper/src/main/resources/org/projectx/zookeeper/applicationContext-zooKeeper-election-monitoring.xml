@@ -24,10 +24,10 @@
         <property name="beans">
             <map>
                 <entry
-                    key="org.projectx.zookeeper.election.monitor.LeaderElectorMonitorMBean:Type=$zk{zookeeper.entity.name}LeaderElectionMonitor"
+                    key="org.projectx.zookeeper.election.monitor.LeaderElectorMonitor:Service=${zookeeper.entity.name}"
                     value-ref="leaderElectorMonitor" />
                 <entry
-                    key="org.projectx.zookeeper.election.monitor.LeaderElectorTargetMonitor:Type=$zk{zookeeper.entity.name}LeaderElectionTargetMonitor"
+                    key="org.projectx.zookeeper.election.monitor.LeaderElectorTargetMonitor:Service=${zookeeper.entity.name}"
                     value-ref="leaderElectorTargetMonitor" />
             </map>
         </property>

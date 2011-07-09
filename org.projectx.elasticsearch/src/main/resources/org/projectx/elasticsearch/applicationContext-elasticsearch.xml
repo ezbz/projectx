@@ -17,7 +17,7 @@
         <property name="searchSystemEnvironment" value="true" />
         <property name="locations">
             <list>
-                <value>classpath*:**/projectx.properties</value>
+                <value>classpath*:**/elasticsearch.properties</value>
             </list>
         </property>
         <property name="properties">

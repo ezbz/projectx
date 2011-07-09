@@ -26,7 +26,7 @@
         <constructor-arg ref="zookeeperTemplate" />
         <constructor-arg
             value="${org.projectx.zookeeper.services.root}/${org.projectx.environment}" />
-        <constructor-arg value="$zk{zookeeper.entity.name}" />
+        <constructor-arg value="${zookeeper.entity.name}" />
     </bean>
 
     <bean id="leaderElector" class="org.projectx.zookeeper.election.LeaderElectorImpl"

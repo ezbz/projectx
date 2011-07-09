@@ -10,13 +10,9 @@
     <bean
         class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <description>
-            Exposes the $zk{zookeeper.entity.name} property to the context
-            Note that the zookeeper PropertyPlaceholderConfigurer must resort
-            to different naming scheme for properties, otherwise other configurers
-            in the classpath conflict in the resolution process
+            Exposes the ${zookeeper.entity.name} property to the context
         </description>
-        <property name="placeholderPrefix" value="$zk{" />
-        <property name="placeholderSuffix" value="}" />
+        <property name="ignoreUnresolvablePlaceholders" value="true" />
         <property name="properties">
             <map>
                 <entry key="zookeeper.entity.name">

@@ -30,7 +30,7 @@
         class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="ignoreUnresolvablePlaceholders" value="false" />
         <property name="location"
-            value="classpath:org/projectx/zookeeper/Zookeeper.properties" />
+            value="classpath:org/projectx/zookeeper/zookeeper.properties" />
     </bean>
 
     <bean id="leaderElectionTarget"

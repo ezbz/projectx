@@ -14,7 +14,7 @@
         <property name="beans">
             <map>
                 <entry
-                    key="org.projectx.zookeeper.ZookeeperClientMonitor:Type=$zk{zookeeper.entity.name}ZookeeperClient"
+                    key="org.projectx.zookeeper.ZookeeperClientMonitor:Service=${zookeeper.entity.name}"
                     value-ref="zkClientMonitor" />
             </map>
         </property>

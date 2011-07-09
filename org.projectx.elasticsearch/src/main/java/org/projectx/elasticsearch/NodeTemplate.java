@@ -65,7 +65,6 @@ public class NodeTemplate implements IndexSearchEngine<SearchHit>, NodeOperation
       @Override
       public ActionFuture<IndicesStatusResponse> execute(final IndicesAdminClient admin) {
         return admin.status(Requests.indicesStatusRequest());
-
       }
     });
 
@@ -79,7 +78,6 @@ public class NodeTemplate implements IndexSearchEngine<SearchHit>, NodeOperation
       @Override
       public ActionFuture<DeleteIndexResponse> execute(final IndicesAdminClient admin) {
         return admin.delete(Requests.deleteIndexRequest(indexName));
-
       }
     });
   }
@@ -91,7 +89,6 @@ public class NodeTemplate implements IndexSearchEngine<SearchHit>, NodeOperation
       @Override
       public ActionFuture<RefreshResponse> execute(final IndicesAdminClient admin) {
         return admin.refresh(Requests.refreshRequest(indexName).waitForOperations(true));
-
       }
     });
   }
@@ -102,7 +99,6 @@ public class NodeTemplate implements IndexSearchEngine<SearchHit>, NodeOperation
       @Override
       public ActionFuture<CloseIndexResponse> execute(final IndicesAdminClient admin) {
         return admin.close(Requests.closeIndexRequest(indexName));
-
       }
     });
   }
@@ -113,7 +109,6 @@ public class NodeTemplate implements IndexSearchEngine<SearchHit>, NodeOperation
       @Override
       public ActionFuture<FlushResponse> execute(final IndicesAdminClient admin) {
         return admin.flush(Requests.flushRequest(indexName));
-
       }
     });
   }
@@ -124,7 +119,6 @@ public class NodeTemplate implements IndexSearchEngine<SearchHit>, NodeOperation
       @Override
       public ActionFuture<GatewaySnapshotResponse> execute(final IndicesAdminClient admin) {
         return admin.gatewaySnapshot(Requests.gatewaySnapshotRequest(indexName));
-
       }
     });
   }

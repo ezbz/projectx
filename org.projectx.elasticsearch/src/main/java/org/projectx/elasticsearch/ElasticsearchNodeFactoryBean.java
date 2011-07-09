@@ -95,7 +95,7 @@ public class ElasticsearchNodeFactoryBean implements FactoryBean<Node>, Initiali
       }
       nodeBuilder.getSettings().loadFromStream(filename, configLocation.getInputStream());
     } catch (final Exception e) {
-      throw new IllegalArgumentException("Cound not settings from configLocation: "
+      throw new IllegalArgumentException("Could not load settings from configLocation: "
           + configLocation.getDescription(), e);
     }
   }
@@ -105,7 +105,7 @@ public class ElasticsearchNodeFactoryBean implements FactoryBean<Node>, Initiali
     try {
       node.close();
     } catch (final Exception e) {
-      logger.warn("Error closing Elasticsearch node: " + e.getMessage());
+      logger.error("Error closing Elasticsearch node: ", e);
     }
   }
 

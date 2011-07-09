@@ -13,7 +13,7 @@
         <constructor-arg ref="zookeeperTemplate" />
         <constructor-arg
             value="${org.projectx.zookeeper.services.root}/${org.projectx.environment}" />
-        <constructor-arg value="$zk{zookeeper.entity.name}" />
+        <constructor-arg value="${zookeeper.entity.name}" />
         <constructor-arg ref="serviceMetaDataProvider" />
     </bean>
 
@@ -26,6 +26,6 @@
 
     <bean id="serviceMetaDataProvider"
         class="org.projectx.zookeeper.presence.ServiceMetaDataProvider">
-        <constructor-arg value="$zk{zookeeper.entity.name}" />
+        <constructor-arg value="${zookeeper.entity.name}" />
     </bean>
 </beans>
