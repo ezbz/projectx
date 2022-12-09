@@ -61,7 +61,7 @@
         <!--<org.projectx.zookeeper.web.version>0.0.2-SNAPSHOT</org.projectx.zookeeper.web.version>-->
         <org.projectx.elasticsearch.version>0.0.2-SNAPSHOT</org.projectx.elasticsearch.version>
 
-        <org.springframework.version>3.0.5.RELEASE</org.springframework.version>
+        <org.springframework.version>6.0.0</org.springframework.version>
         <org.springframework.security.version>3.0.4.RELEASE</org.springframework.security.version>
         <org.slf4j.version>1.6.1</org.slf4j.version>
         <org.mortbay.jetty.version>6.1.26</org.mortbay.jetty.version>
