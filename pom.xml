@@ -101,12 +101,12 @@
         <repository>
             <id>maven repo1</id>
             <name>repo1</name>
-            <url> http://repo1.maven.org/maven2/</url>
+            <url> https://repo1.maven.org/maven2/</url>
         </repository>
         <repository>
             <id>sonatype-releases</id>
             <name>Sonatype Release Repository</name>
-            <url>http://oss.sonatype.org/content/repositories/releases/</url>
+            <url>https://oss.sonatype.org/content/repositories/releases/</url>
         </repository>
         <repository>
             <id>atlassian-proxy</id>
